@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App1.TabbedPage1">
+  <!--Pages can be added as references or inline-->
+    <ContentPage Title="Переводчик">
+        <StackLayout BackgroundColor="Gray"
+          Padding="10"
+                     VerticalOptions="Fill"
+                     >
+            <Editor 
+                           Margin="10"
+                           HeightRequest="250"
+                             x:Name="texbox1"
+                     Placeholder="Введите текст для перевода"
+                           >
+            </Editor>
+
+            <BoxView
+                HeightRequest="0.1"
+                BackgroundColor="AliceBlue"
+                >
+            </BoxView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100" />
+                    <RowDefinition  />
+                    <RowDefinition  />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition  Width="100" />
+                    <ColumnDefinition  Width="120"  />
+                    <ColumnDefinition Width="100" />
+                </Grid.ColumnDefinitions>
+
+               
+               
+            
+                <Picker x:Name="pick" Grid.Row="0" Grid.Column="0">
+                    <Picker.Items >
+                        <x:String>Русский</x:String>
+                        <x:String>Английский</x:String>
+                        <x:String>Китайский</x:String>
+                        <x:String>Латынь</x:String>
+                    </Picker.Items>
+                    
+                </Picker>
+                <Picker x:Name="pick1" Grid.Row="0" Grid.Column="1">
+                    <Picker.Items >
+                        <x:String>Русский</x:String>
+                        <x:String>Английский</x:String>
+                        <x:String>Китайский</x:String>
+                        <x:String>Латынь</x:String>
+                    </Picker.Items>
+
+                </Picker>
+                <!--<Button Text="125" Grid.Row="0" Grid.Column="0"></Button>-->
+                <Button  Text="Перевести" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" 
+                         x:Name="Button1" Clicked="OnButtonClicked"
+                         ></Button>
+            </Grid>
+            <BoxView
+                HeightRequest="0.1"
+                BackgroundColor="AliceBlue"
+                >
+            </BoxView>
+
+            <Editor 
+                           Margin="10"
+                           HeightRequest="250"
+                           IsReadOnly="True"
+                    x:Name="texbox2"
+                     Placeholder="YOU BURN ME UP!!"
+                           >
+            </Editor>
+
+           
+        </StackLayout>
+      
+    </ContentPage>
+    
+    
+    <ContentPage Title="Проверка слов">
+        <StackLayout Padding="10"
+                     VerticalOptions="Fill">
+            <Editor HeightRequest="150"
+                     x:Name="textbox3"
+                    Placeholder="проба"
+                    >
+                
+            </Editor>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="85"/>
+                    </Grid.RowDefinitions>
+                    
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                         <ColumnDefinition Width="100"/>
+                         <ColumnDefinition Width="100"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <Button x:Name="button2" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2"
+                            Text="Найти подходящие"
+                            Clicked="OnButtonClicked2"
+                            >
+                        
+                    </Button>
+                    
+                </Grid>
+
+            <Editor Margin="10"
+                    x:Name="textbox4"
+                    IsReadOnly="True"
+                    Placeholder="Слова тут"
+                    HeightRequest="100"
+                    >
+                
+            </Editor>
+
+            <Label
+                Text="Speller- Алгоритм интуитивно типа. С помощью математического выражения и базы данных словаря русского языка. Алгоритм, находит более похожие слова по анонимам.
+Когда слова имеют одно звучание, но имеют разный смысл. Программа была сделана с помощью запросов YANDEX без API key's.
+Алгоритм, не сможет прочитать мысли и не выведет слова которые не подходят, всему виной выбор написания пользователя."
+                > </Label>
+            
+        </StackLayout>
+    </ContentPage>
+
+    
+    
+    
+    <ContentPage Title="Заметки">
+        <StackLayout HorizontalOptions="Fill" VerticalOptions="Fill">
+            <Editor x:Name="notice" HeightRequest="300" Placeholder="Заметки">
+            </Editor>
+            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="Button3" Clicked="OnButtonClicked3" Text="сохранить" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2"></Button>
+                <Picker x:Name="combobox" Title="Города" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" SelectedIndexChanged="PickChange">
+                    <Picker.Items>
+                        <x:String>БАРСЕЛОНА</x:String>
+                        <x:String>АБУ-ДАБИ</x:String>
+                        <x:String>ЕРЕВАН</x:String>
+                        <x:String>АМСТЕРДАМ</x:String>
+                        <x:String>ПЕКИН</x:String>
+                        <x:String>РИМ</x:String>
+                        <x:String>МОСКВА</x:String>
+                        <x:String>ЛОНДОН</x:String>
+                        <x:String>БЕРЛИН</x:String>
+                        <x:String>ПАРИЖ</x:String>
+                    </Picker.Items>
+                </Picker>
+            </Grid>
+
+            <Image x:Name="Image1"
+                   HeightRequest="250"
+                   >
+                
+            </Image>
+        </StackLayout>
+     </ContentPage>
+       
+
+      
+
+</TabbedPage>

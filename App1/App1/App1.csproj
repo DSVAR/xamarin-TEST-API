@@ -1,0 +1,66 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\1.jpg" />
+    <None Remove="Resources\Abu-Dabi.jpg" />
+    <None Remove="Resources\amsterdam.jpg" />
+    <None Remove="Resources\bart.jpg" />
+    <None Remove="Resources\berlin.jpg" />
+    <None Remove="Resources\C7KhwHO_7CM.jpg" />
+    <None Remove="Resources\era.jpg" />
+    <None Remove="Resources\london.jpg" />
+    <None Remove="Resources\moscow.jpg" />
+    <None Remove="Resources\parij.jpg" />
+    <None Remove="Resources\pekin.jpg" />
+    <None Remove="Resources\rim.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Abu-Dabi.jpg" />
+    <EmbeddedResource Include="Resources\amsterdam.jpg" />
+    <EmbeddedResource Include="Resources\bart.jpg" />
+    <EmbeddedResource Include="Resources\berlin.jpg" />
+    <EmbeddedResource Include="Resources\C7KhwHO_7CM.jpg" />
+    <EmbeddedResource Include="Resources\era.jpg" />
+    <EmbeddedResource Include="Resources\london.jpg" />
+    <EmbeddedResource Include="Resources\moscow.jpg" />
+    <EmbeddedResource Include="Resources\parij.jpg" />
+    <EmbeddedResource Include="Resources\pekin.jpg" />
+    <EmbeddedResource Include="Resources\rim.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Leaf.xNet" Version="5.2.10" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Xamarin.Forms" Version="4.5.0.495" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="TabbedPage1.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
